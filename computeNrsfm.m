@@ -37,36 +37,6 @@ switch method
       for i=1:nBasis-1; anim.SBasis(:,:,i+1)=V(3*i-2:3*i,:); end
       anim.l=Z';
     end
-  case 2 % Xiao Kanade
-    if hasAnyNan
-      warning('Method not supported with missing entries');
-      return;
-    end
-    if exist('OCTAVE_VERSION','builtin')==5
-      warning('Method not supported under Octave');
-      return;
-    end
-    anim = nrsfmXiaoKanade( W, nBasis );
-  case 3,
-    if hasAnyNan
-      warning('Method not supported with missing entries');
-      return;
-    end
-    if exist('OCTAVE_VERSION','builtin')==5
-      warning('Method not supported under Octave');
-      return;
-    end
-    anim = nrsfmMsfm( W, nBasis, nTriplet, nPair, nItr );
-  case 4,
-    if hasAnyNan
-      warning('Method not supported with missing entries');
-      return;
-    end
-    if exist('OCTAVE_VERSION','builtin')==5
-      warning('Method not supported under Octave');
-      return;
-    end
-    anim = nrsfmCsfm( W, nBasis, nTriplet, nPair, nItr );
 end
 % Perform gradient descent on the different coefficients
 if nItrSBA>0 && (method==1 || method==2)
