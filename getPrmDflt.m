@@ -1,4 +1,4 @@
-unction varargout = getPrmDflt( prm, dfs, checkExtra )
+function varargout = getPrmDflt( prm, dfs, checkExtra )
 % Helper to set default values (if not already set) of parameter struct.
 %
 % Takes input parameters and a list of 'name'/default pairs, and for each
